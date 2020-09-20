@@ -1,5 +1,5 @@
 # DA-His
-使用Delphi XE开发的Hopspital information management，基于RemObjects DataAbstract，支持Internet标准。
+使用Delphi 10开发的Hopspital information management，基于RemObjects DataAbstract，以Schema为中心，支持Internet标准。
 
 ## 组件依赖
 1. Remobjects DataAbstract 9
@@ -18,6 +18,5 @@
 
 
 ## 开发计划
-1. 后台验证用户数据查询、数据操作的权限。
-2. 优化代码，方便更快开发。
+
 
