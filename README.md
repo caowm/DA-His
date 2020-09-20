@@ -19,7 +19,8 @@
 4. 后台业务逻辑都写在SQLServer存储过程，在Schema里面配置CRUD绑定的存储过程。
 5. FastReport在后台生成报表传给前台，后台更新打印模板，前台即完成打印更新。
 6. 面向服务、多层架构、接口标准，这些都是因为Remobjects。
-7. base/auto update/提供软件升级功能
+7. base/auto update/提供软件升级功能。
+8. 系统各部分都有设计，松散耦合，不堆积重复代码。
 
 ## 安装步骤
 1. 创建SqlServer2008数据库：脚本在db目录中
