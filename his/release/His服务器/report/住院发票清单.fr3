@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<TfrxReport Version="6.2.11" DotMatrixReport="False" EngineOptions.DoublePass="True" IniFile="\Software\Fast Reports" PreviewOptions.Buttons="18431" PreviewOptions.Zoom="1" PrintOptions.Printer="预设" PrintOptions.PrintOnSheet="0" ReportOptions.CreateDate="41822.4259856597" ReportOptions.Description.Text="" ReportOptions.LastChange="44092.6874013657" ScriptLanguage="PascalScript" ScriptText.Text="&#13;&#10;begin&#13;&#10;  ReportDB.Connected := False;&#13;&#10;  ReportDB.DatabaseName := DB_His_Hosp;&#13;&#10;&#13;&#10;end." StoreInDFM="False">
+  <Datasets>
+    <item DataSet="FeeQuery" DataSetName="FeeQuery"/>
+    <item DataSet="PersonQuery" DataSetName="PersonQuery"/>
+    <item DataSet="HospFeeMaster" DataSetName="HospFeeMaster"/>
+  </Datasets>
+  <Variables>
+    <item Name=" New Category1"/>
+    <item Name="HospFeeID" Value="201412270001"/>
+  </Variables>
+  <TfrxDataPage Name="Data" Height="1000" Left="0" Top="0" Width="1000">
+    <TfrxADODatabase Name="ReportDB" LoginPrompt="False" PropData="05704C656674023C0470546F70022C"/>
+    <TfrxADOQuery Name="FeeQuery" UserName="FeeQuery" CloseDataSource="True" FieldAliases.Text="" BCDToCurrency="False" IgnoreDupParams="False" SQL.Text="select FeeDate, YBType, StatTypeID, StatType, FeeName, Specs, HUnit, HPrice, sum(Quan) as Quan, sum(SumPrice) as SumPrice                            &#13;&#10;from hosp_FeeDetail (nolock)               &#13;&#10;where HospID=:HospID and HospFeeID=:HospFeeID                                                                                                                                                                 &#13;&#10;group by FeeDate, YBType, StatTypeID, StatType, FeeName, Specs, HUnit, HPrice&#13;&#10;having sum(Quan) &#60;&#62; 0                                                            " CommandTimeout="30" Database="ReportDB" LockType="ltReadOnly" PropData="05704C656674039C000470546F70022C0A506172616D657465727301010658204E616D653D22486F73704944222044617461547970653D226674537472696E67222045787072657373696F6E3D22262336303B486F73704665654D61737465722E262333343B486F73704944262333343B262336323B2200010646204E616D653D22486F73704665654944222044617461547970653D226674537472696E67222045787072657373696F6E3D22262336303B486F73704665654944262336323B220000"/>
+    <TfrxADOQuery Name="PersonQuery" UserName="PersonQuery" CloseDataSource="True" FieldAliases.Text="" BCDToCurrency="False" IgnoreDupParams="False" SQL.Text="SELECT HospID, PatientName, Sex, BedID, OfficeName                                                                                                                &#13;&#10;FROM Hosp_Patient                           &#13;&#10;WHERE HospID = :HospID" CommandTimeout="30" Database="ReportDB" LockType="ltReadOnly" PropData="05704C6566740308010470546F70022C0A506172616D657465727301010658204E616D653D22486F73704944222044617461547970653D226674537472696E67222045787072657373696F6E3D22262336303B486F73704665654D61737465722E262333343B486F73704944262333343B262336323B220000"/>
+    <TfrxADOQuery Name="HospFeeMaster" UserName="HospFeeMaster" CloseDataSource="True" FieldAliases.Text="" BCDToCurrency="False" IgnoreDupParams="False" SQL.Text="select HospID                                         &#13;&#10;from Hosp_FeeMaster          &#13;&#10;where HospFeeID=:HospFeeID                                                            " CommandTimeout="30" Database="ReportDB" LockType="ltReadOnly" PropData="05704C656674039C000470546F700388000A506172616D657465727301010646204E616D653D22486F73704665654944222044617461547970653D226674537472696E67222045787072657373696F6E3D22262336303B486F73704665654944262336323B220000"/>
+  </TfrxDataPage>
+  <TfrxReportPage Name="Page2" PaperWidth="210" PaperHeight="297" PaperSize="9" LeftMargin="10" RightMargin="10" TopMargin="10" BottomMargin="10" ColumnWidth="0" ColumnPositions.Text="" Frame.Typ="0" LargeDesignHeight="True" HGuides.Text="" VGuides.Text="">
+    <TfrxMasterData Name="MasterData2" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Frame.Typ="0" Height="20.69295" Left="0" Top="211.65368" Width="718.1107" ColumnWidth="0" ColumnGap="0" DataSet="FeeQuery" DataSetName="FeeQuery" RowCount="0">
+      <TfrxMemoView Name="Memo9" AllowVectorExport="True" Left="0" Top="0" Width="347.71676" Height="18.8976378" Font.Charset="134" Font.Color="-16777208" Font.Height="-13" Font.Name="宋体" Font.Style="0" Frame.Typ="0" ParentFont="False" WordWrap="False" Text="([FeeQuery.&#34;YBType&#34;])[FeeQuery.&#34;FeeName&#34;]"/>
+      <TfrxMemoView Name="Memo10" AllowVectorExport="True" Left="347.71676" Top="0" Width="113.3859" Height="18.8976378" Font.Charset="134" Font.Color="-16777208" Font.Height="-13" Font.Name="宋体" Font.Style="0" Frame.Typ="0" HAlign="haCenter" ParentFont="False" WordWrap="False" Text="[FeeQuery.&#34;Specs&#34;]"/>
+      <TfrxMemoView Name="Memo11" AllowVectorExport="True" Left="461.10266" Top="0" Width="64.25201" Height="18.8976378" Font.Charset="134" Font.Color="-16777208" Font.Height="-13" Font.Name="宋体" Font.Style="0" Frame.Typ="0" HAlign="haCenter" ParentFont="False" WordWrap="False" Text="[FeeQuery.&#34;HUnit&#34;]"/>
+      <TfrxMemoView Name="Memo12" AllowVectorExport="True" Left="525.35467" Top="0" Width="68.03154" Height="18.8976378" DisplayFormat.FormatStr="%2.3f" DisplayFormat.Kind="fkNumeric" Font.Charset="134" Font.Color="-16777208" Font.Height="-13" Font.Name="宋体" Font.Style="0" Frame.Typ="0" HAlign="haRight" ParentFont="False" WordWrap="False" Text="[FeeQuery.&#34;HPrice&#34;]"/>
+      <TfrxMemoView Name="Memo13" AllowVectorExport="True" Left="642.5201" Top="0" Width="75.5906" Height="18.8976378" DisplayFormat.FormatStr="%2.2f" DisplayFormat.Kind="fkNumeric" Font.Charset="134" Font.Color="-16777208" Font.Height="-13" Font.Name="宋体" Font.Style="0" Frame.Typ="0" HAlign="haRight" ParentFont="False" WordWrap="False" Text="[FeeQuery.&#34;SumPrice&#34;]"/>
+      <TfrxMemoView Name="Memo19" AllowVectorExport="True" Left="593.38621" Top="0" Width="49.13389" Height="18.8976378" DisplayFormat.FormatStr="%2.3f" DisplayFormat.Kind="fkNumeric" Font.Charset="134" Font.Color="-16777208" Font.Height="-13" Font.Name="宋体" Font.Style="0" Frame.Typ="0" HAlign="haRight" ParentFont="False" WordWrap="False" Text="[FeeQuery.&#34;Quan&#34;]"/>
+    </TfrxMasterData>
+    <TfrxPageFooter Name="PageFooter2" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Frame.Typ="0" Height="22.6771678" Left="0" Top="385.51206" Width="718.1107">
+      <TfrxMemoView Name="Memo16" AllowVectorExport="True" Left="7.55906" Top="3.77953" Width="204.09462" Height="18.8976378" DisplayFormat.FormatStr="YYYY-MM-DD hh:mm" DisplayFormat.Kind="fkDateTime" Font.Charset="134" Font.Color="-16777208" Font.Height="-13" Font.Name="宋体" Font.Style="0" Frame.Typ="0" ParentFont="False" WordWrap="False" Text="打印：[Now]"/>
+      <TfrxMemoView Name="Memo20" AllowVectorExport="True" Left="506.45702" Top="3.77953" Width="264.5671" Height="18.8976378" Font.Charset="134" Font.Color="-16777208" Font.Height="-13" Font.Name="宋体" Font.Style="0" Frame.Typ="0" ParentFont="False" WordWrap="False" Text="第[Page]页 共[TotalPages]页">
+        <Formats>
+          <item/>
+          <item/>
+        </Formats>
+      </TfrxMemoView>
+    </TfrxPageFooter>
+    <TfrxReportTitle Name="ReportTitle1" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Frame.Typ="0" Height="86.9291778" Left="0" Top="18.89765" Width="718.1107">
+      <TfrxLineView Name="Line5" AllowVectorExport="True" Left="0" Top="66.04731" Width="718.1107" Height="0" Color="0" Frame.Typ="4"/>
+      <TfrxMemoView Name="Memo40" AllowVectorExport="True" Left="204.09462" Top="8.55906" Width="275.90569" Height="22.67718" Font.Charset="134" Font.Color="-16777208" Font.Height="-21" Font.Name="宋体" Font.Style="1" Frame.Typ="0" HAlign="haCenter" ParentFont="False" VAlign="vaCenter" Text="住院发票清单"/>
+      <TfrxPictureView Name="Picture2" AllowVectorExport="True" Left="3.77953" Top="2.22047" Width="37.7953" Height="37.7953" Frame.Typ="0" HightQuality="False" Transparent="False" TransparentColor="16777215"/>
+      <TfrxMemoView Name="Memo46" AllowVectorExport="True" Left="45.35436" Top="6" Width="98.26778" Height="30.23624" Font.Charset="134" Font.Color="-16777208" Font.Height="-13" Font.Name="宋体" Font.Style="0" Frame.Typ="0" ParentFont="False" Text="XXXX医院"/>
+      <TfrxMemoView Name="Memo3" AllowVectorExport="True" Left="0" Top="68.03154" Width="347.71676" Height="18.8976378" Font.Charset="134" Font.Color="-16777208" Font.Height="-13" Font.Name="宋体" Font.Style="0" Frame.Typ="0" ParentFont="False" WordWrap="False" Text="名称"/>
+      <TfrxMemoView Name="Memo5" AllowVectorExport="True" Left="347.71676" Top="68.03154" Width="113.3859" Height="18.8976378" Font.Charset="134" Font.Color="-16777208" Font.Height="-13" Font.Name="宋体" Font.Style="0" Frame.Typ="0" HAlign="haCenter" ParentFont="False" WordWrap="False" Text="规格"/>
+      <TfrxMemoView Name="Memo6" AllowVectorExport="True" Left="461.10266" Top="68.03154" Width="64.25201" Height="18.8976378" Font.Charset="134" Font.Color="-16777208" Font.Height="-13" Font.Name="宋体" Font.Style="0" Frame.Typ="0" HAlign="haCenter" ParentFont="False" WordWrap="False" Text="单位"/>
+      <TfrxMemoView Name="Memo7" AllowVectorExport="True" Left="593.38621" Top="68.03154" Width="49.13389" Height="18.8976378" Font.Charset="134" Font.Color="-16777208" Font.Height="-13" Font.Name="宋体" Font.Style="0" Frame.Typ="0" HAlign="haRight" ParentFont="False" WordWrap="False" Text="数量"/>
+      <TfrxMemoView Name="Memo8" AllowVectorExport="True" Left="642.5201" Top="68.03154" Width="75.5906" Height="18.8976378" Font.Charset="134" Font.Color="-16777208" Font.Height="-13" Font.Name="宋体" Font.Style="0" Frame.Typ="0" HAlign="haRight" ParentFont="False" WordWrap="False" Text="金额"/>
+      <TfrxMemoView Name="Memo2" AllowVectorExport="True" Left="3.77953" Top="41.57483" Width="715.36195091" Height="17.52327545" Font.Charset="134" Font.Color="-16777208" Font.Height="-13" Font.Name="宋体" Font.Style="0" Frame.Typ="0" HAlign="haCenter" ParentFont="False" Text="科室：[PersonQuery.&#34;OfficeName&#34;] 住院号：[PersonQuery.&#34;HospID&#34;] 姓名：[PersonQuery.&#34;PatientName&#34;] 床号：[PersonQuery.&#34;BedID&#34;] 发票号：[HospFeeID]">
+        <Formats>
+          <item/>
+          <item/>
+          <item/>
+          <item/>
+          <item/>
+        </Formats>
+      </TfrxMemoView>
+      <TfrxMemoView Name="Memo18" AllowVectorExport="True" Left="525.35467" Top="68.03154" Width="68.03154" Height="18.8976378" Font.Charset="134" Font.Color="-16777208" Font.Height="-13" Font.Name="宋体" Font.Style="0" Frame.Typ="0" HAlign="haRight" ParentFont="False" WordWrap="False" Text="单价"/>
+    </TfrxReportTitle>
+    <TfrxGroupHeader Name="GroupHeader1" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Frame.Typ="0" Height="22.67718" Left="0" Top="166.29932" Width="718.1107" Condition="&#60;FeeQuery.&#34;FeeDate&#34;&#62;">
+      <TfrxMemoView Name="Memo4" AllowVectorExport="True" Left="3.77953" Top="3.77953" Width="215.43321" Height="18.8976378" Font.Charset="134" Font.Color="-16777208" Font.Height="-13" Font.Name="宋体" Font.Style="1" Frame.Typ="0" ParentFont="False" WordWrap="False" VAlign="vaCenter" Text="[FeeQuery.&#34;FeeDate&#34;]"/>
+      <TfrxLineView Name="Line1" AllowVectorExport="True" Left="0" Top="0" Width="718.1107" Height="0" Color="0" Frame.Typ="4"/>
+    </TfrxGroupHeader>
+    <TfrxReportSummary Name="ReportSummary1" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Frame.Typ="0" Height="22.67718" Left="0" Top="340.1577" Width="718.1107">
+      <TfrxMemoView Name="Memo1" AllowVectorExport="True" Left="589.60668" Top="3.77953" Width="128.50402" Height="18.8976378" DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" Font.Charset="134" Font.Color="-16777208" Font.Height="-13" Font.Name="宋体" Font.Style="0" Frame.Typ="0" HAlign="haRight" ParentFont="False" WordWrap="False" VAlign="vaCenter" Text="[sum(&#60;FeeQuery.&#34;SumPrice&#34;&#62;)]"/>
+      <TfrxMemoView Name="Memo17" AllowVectorExport="True" Left="525.35467" Top="3.77953" Width="64.25201" Height="18.8976378" DisplayFormat.FormatStr="%2.2f" DisplayFormat.Kind="fkNumeric" Font.Charset="134" Font.Color="-16777208" Font.Height="-13" Font.Name="宋体" Font.Style="1" Frame.Typ="0" ParentFont="False" WordWrap="False" VAlign="vaCenter" Text="总计："/>
+      <TfrxLineView Name="Line2" AllowVectorExport="True" Left="0" Top="0" Width="718.1107" Height="0" Color="0" Frame.Typ="4"/>
+    </TfrxReportSummary>
+    <TfrxGroupFooter Name="GroupFooter1" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Frame.Typ="0" Height="22.67718" Left="0" Top="257.00804" Width="718.1107">
+      <TfrxLineView Name="Line4" AllowVectorExport="True" Left="0" Top="0" Width="718.1107" Height="0" Color="0" Frame.Typ="4"/>
+      <TfrxMemoView Name="Memo14" AllowVectorExport="True" Left="589.60668" Top="3.77953" Width="128.50402" Height="18.8976378" DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" Font.Charset="134" Font.Color="-16777208" Font.Height="-13" Font.Name="宋体" Font.Style="0" Frame.Typ="0" HAlign="haRight" ParentFont="False" WordWrap="False" VAlign="vaCenter" Text="[sum(&#60;FeeQuery.&#34;SumPrice&#34;&#62;)]"/>
+      <TfrxMemoView Name="Memo15" AllowVectorExport="True" Left="525.35467" Top="3.77953" Width="64.25201" Height="18.8976378" DisplayFormat.FormatStr="%2.2f" DisplayFormat.Kind="fkNumeric" Font.Charset="134" Font.Color="-16777208" Font.Height="-13" Font.Name="宋体" Font.Style="2" Frame.Typ="0" ParentFont="False" WordWrap="False" VAlign="vaCenter" Text="小计："/>
+    </TfrxGroupFooter>
+  </TfrxReportPage>
+</TfrxReport>

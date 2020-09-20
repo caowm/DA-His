@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Library Name="HisLibrary" UID="{EC0A790D-DA2A-4CB5-8896-9D18FF898EB9}" Version="3.0">
+<Services>
+<Service Name="HisService_System" UID="{5634AA64-F444-406B-BE10-20ADC2E8A407}" Ancestor="DataAbstractService">
+<Documentation><![CDATA[系统]]></Documentation>
+<Interfaces>
+<Interface Name="Default" UID="{1FC9C29C-F27D-43EC-8457-A461CA435F00}">
+<Operations>
+<Operation Name="IsFieldValueExists" UID="{F4660ACF-7D4D-4E94-BEF4-97008F82334A}">
+<Parameters>
+<Parameter Name="Result" DataType="Boolean" Flag="Result">
+</Parameter>
+<Parameter Name="ATableName" DataType="AnsiString" Flag="In" >
+</Parameter>
+<Parameter Name="AFieldName" DataType="AnsiString" Flag="In" >
+</Parameter>
+<Parameter Name="AFieldValue" DataType="AnsiString" Flag="In" >
+</Parameter>
+</Parameters>
+</Operation>
+<Operation Name="ChangePassword" UID="{40B1E705-BC15-4836-A38D-2201C4F754E0}">
+<Parameters>
+<Parameter Name="Result" DataType="Boolean" Flag="Result">
+</Parameter>
+<Parameter Name="UserID" DataType="AnsiString" Flag="In" >
+</Parameter>
+<Parameter Name="OldPassword" DataType="AnsiString" Flag="In" >
+</Parameter>
+<Parameter Name="NewPassword" DataType="AnsiString" Flag="In" >
+</Parameter>
+</Parameters>
+</Operation>
+<Operation Name="ResetPassword" UID="{FF33579F-59A2-4DDA-960F-09C9E597D4E1}">
+<Parameters>
+<Parameter Name="Result" DataType="Boolean" Flag="Result">
+</Parameter>
+<Parameter Name="UserID" DataType="AnsiString" Flag="In" >
+</Parameter>
+<Parameter Name="NewPassword" DataType="AnsiString" Flag="In" >
+</Parameter>
+</Parameters>
+</Operation>
+<Operation Name="WriteLog" UID="{301F0C13-7DA5-4FF5-813C-4BACA3A8C7CA}">
+<Parameters>
+<Parameter Name="Result" DataType="Integer" Flag="Result">
+</Parameter>
+<Parameter Name="AWorkerID" DataType="Integer" Flag="In" >
+</Parameter>
+<Parameter Name="AFlag" DataType="Integer" Flag="In" >
+</Parameter>
+<Parameter Name="ATitle" DataType="AnsiString" Flag="In" >
+</Parameter>
+<Parameter Name="AContent" DataType="AnsiString" Flag="In" >
+</Parameter>
+</Parameters>
+</Operation>
+<Operation Name="GetParam" UID="{5D179B6E-8656-4677-A90F-F8705EA18BD4}">
+<Parameters>
+<Parameter Name="Result" DataType="Variant" Flag="Result">
+</Parameter>
+<Parameter Name="AParamName" DataType="AnsiString" Flag="In" >
+</Parameter>
+<Parameter Name="ADefaultValue" DataType="Variant" Flag="In" >
+</Parameter>
+</Parameters>
+</Operation>
+<Operation Name="WriteParam" UID="{E575E5A2-C7B0-4495-AD5B-7C4B0215CBD9}">
+<Parameters>
+<Parameter Name="AParamName" DataType="AnsiString" Flag="In" >
+</Parameter>
+<Parameter Name="AParamValue" DataType="Variant" Flag="In" >
+</Parameter>
+</Parameters>
+</Operation>
+<Operation Name="GetNextNumber" UID="{D44D35A5-CB90-4F0A-B24C-F5520418201C}">
+<Parameters>
+<Parameter Name="Result" DataType="AnsiString" Flag="Result">
+</Parameter>
+<Parameter Name="NumberName" DataType="AnsiString" Flag="In" >
+</Parameter>
+<Parameter Name="NumberBits" DataType="AnsiString" Flag="In" >
+</Parameter>
+<Parameter Name="YMDFlag" DataType="Integer" Flag="In" >
+</Parameter>
+</Parameters>
+</Operation>
+<Operation Name="GetFieldMaxValue" UID="{56FC5494-6639-4FBF-B1A6-F596B94F45A0}">
+<Parameters>
+<Parameter Name="Result" DataType="Variant" Flag="Result">
+</Parameter>
+<Parameter Name="ATableName" DataType="AnsiString" Flag="In" >
+</Parameter>
+<Parameter Name="AFieldName" DataType="AnsiString" Flag="In" >
+</Parameter>
+</Parameters>
+</Operation>
+<Operation Name="SelectOffice" UID="{C7082591-C4CE-43AE-831F-C384BEEB8ABE}">
+<Parameters>
+<Parameter Name="OfficeID" DataType="AnsiString" Flag="In" >
+</Parameter>
+<Parameter Name="OfficeName" DataType="AnsiString" Flag="In" >
+</Parameter>
+<Parameter Name="OfficeUse" DataType="AnsiString" Flag="In" >
+</Parameter>
+</Parameters>
+</Operation>
+</Operations>
+</Interface>
+</Interfaces>
+</Service>
+<Service Name="HisService_Login" UID="{59B94C0F-2BD4-46E6-A881-BC135FEB4DE0}">
+<Documentation><![CDATA[登录]]></Documentation>
+<Interfaces>
+<Interface Name="Default" UID="{10F949D2-44BC-4DCC-AF4B-7753639820E8}">
+<Operations>
+<Operation Name="Login" UID="{6F5615AF-D9F1-4E62-8899-E2B5C0396F41}">
+<Parameters>
+<Parameter Name="Result" DataType="Utf8String" Flag="Result">
+</Parameter>
+<Parameter Name="LoginText" DataType="Utf8String" Flag="In" >
+</Parameter>
+</Parameters>
+</Operation>
+<Operation Name="Logout" UID="{7D23D103-EB70-4F8D-92DB-DFA7910539E2}">
+<Parameters>
+</Parameters>
+</Operation>
+</Operations>
+</Interface>
+</Interfaces>
+</Service>
+<Service Name="HisService_Clinic" UID="{5EADD916-1CD8-4EB6-8C60-EC43F65D49D8}" Ancestor="DataAbstractService">
+<Documentation><![CDATA[门诊]]></Documentation>
+<Interfaces>
+<Interface Name="Default" UID="{1C385F48-3A91-4F12-83AE-D58168D762AF}">
+<Operations>
+</Operations>
+</Interface>
+</Interfaces>
+</Service>
+<Service Name="HisService_Report" UID="{CE609D4B-C67D-457B-896E-7333D5E44608}">
+<Documentation><![CDATA[报表]]></Documentation>
+<Interfaces>
+<Interface Name="Default" UID="{6C048047-65AB-41D3-992D-006CC36A489C}">
+<Operations>
+<Operation Name="PrintReport" UID="{CEB818EF-02EC-49D0-B541-183F16F06B79}">
+<Parameters>
+<Parameter Name="Result" DataType="Binary" Flag="Result">
+</Parameter>
+<Parameter Name="ReportName" DataType="AnsiString" Flag="In" >
+</Parameter>
+<Parameter Name="ParamNames" DataType="StringArray" Flag="In" >
+</Parameter>
+<Parameter Name="ParamValues" DataType="StringArray" Flag="In" >
+</Parameter>
+<Parameter Name="Flag" DataType="Integer" Flag="In" >
+</Parameter>
+</Parameters>
+</Operation>
+</Operations>
+</Interface>
+</Interfaces>
+</Service>
+<Service Name="HisService_Medicine" UID="{0E9A725A-713B-4888-BF96-5613BA694818}" Ancestor="DataAbstractService">
+<Documentation><![CDATA[药品]]></Documentation>
+<Interfaces>
+<Interface Name="Default" UID="{E4228A93-FCF8-4622-9893-AA9E28733854}">
+<Operations>
+</Operations>
+</Interface>
+</Interfaces>
+</Service>
+<Service Name="HisService_Hosp" UID="{D9A192D6-D0E5-405B-908C-6752CC5591A3}" Ancestor="DataAbstractService">
+<Documentation><![CDATA[住院]]></Documentation>
+<Interfaces>
+<Interface Name="Default" UID="{11757C5E-F670-4A43-9D41-3240EF47F6C4}">
+<Operations>
+</Operations>
+</Interface>
+</Interfaces>
+</Service>
+<Service Name="HisService_Base" UID="{7A3183A1-0F17-405C-9130-8425717B4138}" Ancestor="DataAbstractService">
+<Documentation><![CDATA[基础数据]]></Documentation>
+<Interfaces>
+<Interface Name="Default" UID="{4CE2B46D-A4ED-49F7-A61A-D191B6CE5AED}">
+<Operations>
+</Operations>
+</Interface>
+</Interfaces>
+</Service>
+<Service Name="HisService_YB" UID="{139667E6-D828-4826-9FED-36A6060C554C}" Ancestor="DataAbstractService">
+<Documentation><![CDATA[医保]]></Documentation>
+<Interfaces>
+<Interface Name="Default" UID="{39B98954-04FC-4673-A0EF-4B25F2A9AD88}">
+<Operations>
+</Operations>
+</Interface>
+</Interfaces>
+</Service>
+<Service Name="HisService_XNH" UID="{0CB8B537-BA6F-4C57-A00D-441D6D7C643C}" Ancestor="DataAbstractService">
+<Documentation><![CDATA[新农合]]></Documentation>
+<Interfaces>
+<Interface Name="Default" UID="{2DCAC131-1FFD-471C-BFD5-ABD666917F71}">
+<Operations>
+</Operations>
+</Interface>
+</Interfaces>
+</Service>
+<Service Name="HisService_Dict" UID="{BCF71E6C-F8DA-44C6-8C02-277F7D8D8144}" Ancestor="DataAbstractService">
+<Interfaces>
+<Interface Name="Default" UID="{723496C0-1F70-40F3-AAAF-B16C889409AC}">
+<Operations>
+</Operations>
+</Interface>
+</Interfaces>
+</Service>
+<Service Name="HisService_Extend" UID="{45C5FD31-4D2D-4113-A9EA-40C7151F3E3F}" Ancestor="DataAbstractService">
+<Interfaces>
+<Interface Name="Default" UID="{302E8555-52AC-493F-837C-674FB6D836D9}">
+<Operations>
+</Operations>
+</Interface>
+</Interfaces>
+</Service>
+<Service Name="HisService_Stat" UID="{3568B6B2-F56E-4F96-9DB7-3A5B0488605A}" Ancestor="DataAbstractService">
+<Interfaces>
+<Interface Name="Default" UID="{061D6006-7BA4-4592-B850-062C42CE7C6F}">
+<Operations>
+</Operations>
+</Interface>
+</Interfaces>
+</Service>
+</Services>
+<EventSinks>
+</EventSinks>
+<Structs>
+</Structs>
+<Enums>
+</Enums>
+<Arrays>
+</Arrays>
+<Uses>
+<Use Name="DataAbstract4" UID="{A2C475ED-9ED2-436F-987C-1DAD70EB7B87}" Rodl="$(Data Abstract for Delphi)\Source\DataAbstract4.RODL" AbsoluteRodl="C:\Program Files (x86)\RemObjects Software\Data Abstract for Delphi\Source\DataAbstract4.RODL" UsedRodlUID="{DC8B7BE2-14AF-402D-B1F8-E1008B6FA4F6}" DontCodeGen="1">
+<Includes UID="{ECE5910F-040B-4BDF-9502-EDF7F95642CF}" Delphi="DataAbstract4" DotNet="RemObjects.DataAbstract.Server" ObjC="DataAbstract/DataAbstract4_Intf" Java="com.remobjects.dataabstract.intf" Cocoa="DataAbstract"/>
+</Use>
+</Uses>
+<Exceptions>
+</Exceptions>
+</Library>

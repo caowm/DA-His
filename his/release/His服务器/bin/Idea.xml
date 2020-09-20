@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TIdeaManager>
+	<Services Type="TIdeaCollection" IsObject="true" IsCollection="true" Count="2" ItemClass="TIdeaItem">
+		<Item0>
+			<ConnectionName>LIS</ConnectionName>
+			<ServiceName>IdeaService_Lis</ServiceName>
+			<SchemaName>IdeaService_Lis.daSchema</SchemaName>
+		</Item0>
+		<Item1>
+			<ConnectionName>PACS</ConnectionName>
+			<ServiceName>IdeaService_Pacs</ServiceName>
+			<SchemaName>IdeaService_Pacs.daSchema</SchemaName>
+		</Item1>
+	</Services>
+</TIdeaManager>

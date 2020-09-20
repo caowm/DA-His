@@ -1,0 +1,891 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TDASchema>
+	<BusinessRulesServer Type="TDABusinessRuleScript" IsObject="true">
+		<Description></Description>
+		<Script><![CDATA[]]></Script>
+		<ScriptLanguage>rslPascalScript</ScriptLanguage>
+		<ScriptLanguageStr>JavaScript</ScriptLanguageStr>
+	</BusinessRulesServer>
+	<Commands Type="TDASQLCommandCollection" IsObject="true" IsCollection="true" Count="0" ItemClass="TDASQLCommand">
+	</Commands>
+	<ConnectionManager Type="TDAConnectionManager" IsObject="true" ByRef="true" RefName="DAConnectionManager" Owner="SchemaModelerData">
+	</ConnectionManager>
+	<CustomAttributes Type="TStrings" IsObject="true"></CustomAttributes>
+	<DataDictionary Type="TDADataDictionary" IsObject="true" ByRef="true" RefName="DADataDictionary" Owner="SchemaModelerData">
+	</DataDictionary>
+	<Datasets Type="TDADatasetCollection" IsObject="true" IsCollection="true" Count="3" ItemClass="TDADataset">
+		<Item0>
+			<BusinessClassID></BusinessClassID>
+			<BusinessRulesClient Type="TDAClientBusinessRuleScript" IsObject="true">
+				<CompileOnServer>True</CompileOnServer>
+				<Description></Description>
+				<RunOnClientAndServer>True</RunOnClientAndServer>
+				<Script><![CDATA[]]></Script>
+				<ScriptLanguage>rslPascalScript</ScriptLanguage>
+				<ScriptLanguageStr></ScriptLanguageStr>
+			</BusinessRulesClient>
+			<BusinessRulesServer Type="TDABusinessRuleScript" IsObject="true">
+				<Description></Description>
+				<Script><![CDATA[]]></Script>
+				<ScriptLanguage>rslPascalScript</ScriptLanguage>
+				<ScriptLanguageStr></ScriptLanguageStr>
+			</BusinessRulesServer>
+			<CustomAttributes Type="TStrings" IsObject="true"></CustomAttributes>
+			<DeleteCommandName></DeleteCommandName>
+			<Description></Description>
+			<DynamicWhereXML><![CDATA[]]></DynamicWhereXML>
+			<Fields Type="TDAFieldCollection" IsObject="true" IsCollection="true" Count="2" ItemClass="TDAField">
+				<Item0>
+					<Alignment>taLeftJustify</Alignment>
+					<BlobType>dabtUnknown</BlobType>
+					<BusinessClassID></BusinessClassID>
+					<Calculated>False</Calculated>
+					<CustomAttributes Type="TStrings" IsObject="true"></CustomAttributes>
+					<DataType>datDateTime</DataType>
+					<DefaultValue></DefaultValue>
+					<Description></Description>
+					<DictionaryEntry></DictionaryEntry>
+					<DisplayFormat></DisplayFormat>
+					<DisplayWidth>0</DisplayWidth>
+					<EditFormat></EditFormat>
+					<EditMask></EditMask>
+					<Expression></Expression>
+					<GeneratorName></GeneratorName>
+					<InPrimaryKey>False</InPrimaryKey>
+					<KeyFields></KeyFields>
+					<LogChanges>True</LogChanges>
+					<Lookup>False</Lookup>
+					<LookupCache>False</LookupCache>
+					<LookupKeyFields></LookupKeyFields>
+					<LookupResultField></LookupResultField>
+					<LookupSource Type="TDataSource" IsObject="true" IsNull="true">
+					</LookupSource>
+					<Name>AddTime</Name>
+					<ReadOnly>False</ReadOnly>
+					<RegExpression></RegExpression>
+					<Required>False</Required>
+					<ServerAutoRefresh>False</ServerAutoRefresh>
+					<ServerCalculated>False</ServerCalculated>
+					<Size>0</Size>
+					<Visible>True</Visible>
+				</Item0>
+				<Item1>
+					<Alignment>taLeftJustify</Alignment>
+					<BlobType>dabtUnknown</BlobType>
+					<BusinessClassID></BusinessClassID>
+					<Calculated>False</Calculated>
+					<CustomAttributes Type="TStrings" IsObject="true"></CustomAttributes>
+					<DataType>datInteger</DataType>
+					<DefaultValue></DefaultValue>
+					<Description></Description>
+					<DictionaryEntry></DictionaryEntry>
+					<DisplayFormat></DisplayFormat>
+					<DisplayWidth>0</DisplayWidth>
+					<EditFormat></EditFormat>
+					<EditMask></EditMask>
+					<Expression></Expression>
+					<GeneratorName></GeneratorName>
+					<InPrimaryKey>False</InPrimaryKey>
+					<KeyFields></KeyFields>
+					<LogChanges>True</LogChanges>
+					<Lookup>False</Lookup>
+					<LookupCache>False</LookupCache>
+					<LookupKeyFields></LookupKeyFields>
+					<LookupResultField></LookupResultField>
+					<LookupSource Type="TDataSource" IsObject="true" IsNull="true">
+					</LookupSource>
+					<Name>ID</Name>
+					<ReadOnly>False</ReadOnly>
+					<RegExpression></RegExpression>
+					<Required>False</Required>
+					<ServerAutoRefresh>False</ServerAutoRefresh>
+					<ServerCalculated>False</ServerCalculated>
+					<Size>0</Size>
+					<Visible>True</Visible>
+				</Item1>
+			</Fields>
+			<InsertCommandName></InsertCommandName>
+			<IsPublic>True</IsPublic>
+			<Name>OutSite_MaxFeedback</Name>
+			<Params Type="TDAParamCollection" IsObject="true" IsCollection="true" Count="0" ItemClass="TDAParam">
+			</Params>
+			<ReadOnly>False</ReadOnly>
+			<Statements Type="TDAStatementCollection" IsObject="true" IsCollection="true" Count="1" ItemClass="TDAStatement">
+				<Item0>
+					<ColumnMappings Type="TDAColumnMappingCollection" IsObject="true" IsCollection="true" Count="2" ItemClass="TDAColumnMapping">
+						<Item0>
+							<DatasetField>AddTime</DatasetField>
+							<TableField>AddTime</TableField>
+						</Item0>
+						<Item1>
+							<DatasetField>ID</DatasetField>
+							<TableField>ID</TableField>
+						</Item1>
+					</ColumnMappings>
+					<Connection></Connection>
+					<ConnectionType>MSSQL</ConnectionType>
+					<Default>True</Default>
+					<GeneratorName></GeneratorName>
+					<Name>HIS_Sys</Name>
+					<SQL>select top 1 AddTime, ID
+from OutSite_Feedback
+order by AddTime desc, ID desc
+</SQL>
+					<StatementType>stSQL</StatementType>
+					<TargetTable></TargetTable>
+				</Item0>
+			</Statements>
+			<UpdateCommandName></UpdateCommandName>
+		</Item0>
+		<Item1>
+			<BusinessClassID></BusinessClassID>
+			<BusinessRulesClient Type="TDAClientBusinessRuleScript" IsObject="true">
+				<CompileOnServer>True</CompileOnServer>
+				<Description></Description>
+				<RunOnClientAndServer>True</RunOnClientAndServer>
+				<Script><![CDATA[]]></Script>
+				<ScriptLanguage>rslPascalScript</ScriptLanguage>
+				<ScriptLanguageStr></ScriptLanguageStr>
+			</BusinessRulesClient>
+			<BusinessRulesServer Type="TDABusinessRuleScript" IsObject="true">
+				<Description></Description>
+				<Script><![CDATA[]]></Script>
+				<ScriptLanguage>rslPascalScript</ScriptLanguage>
+				<ScriptLanguageStr></ScriptLanguageStr>
+			</BusinessRulesServer>
+			<CustomAttributes Type="TStrings" IsObject="true"></CustomAttributes>
+			<DeleteCommandName></DeleteCommandName>
+			<Description></Description>
+			<DynamicWhereXML><![CDATA[]]></DynamicWhereXML>
+			<Fields Type="TDAFieldCollection" IsObject="true" IsCollection="true" Count="14" ItemClass="TDAField">
+				<Item0>
+					<Alignment>taLeftJustify</Alignment>
+					<BlobType>dabtUnknown</BlobType>
+					<BusinessClassID></BusinessClassID>
+					<Calculated>False</Calculated>
+					<CustomAttributes Type="TStrings" IsObject="true">Options.Editing=False
+</CustomAttributes>
+					<DataType>datDateTime</DataType>
+					<DefaultValue></DefaultValue>
+					<Description></Description>
+					<DictionaryEntry></DictionaryEntry>
+					<DisplayFormat></DisplayFormat>
+					<DisplayLabel>咨询时间</DisplayLabel>
+					<DisplayWidth>0</DisplayWidth>
+					<EditFormat></EditFormat>
+					<EditMask></EditMask>
+					<Expression></Expression>
+					<GeneratorName></GeneratorName>
+					<InPrimaryKey>True</InPrimaryKey>
+					<KeyFields></KeyFields>
+					<LogChanges>True</LogChanges>
+					<Lookup>False</Lookup>
+					<LookupCache>False</LookupCache>
+					<LookupKeyFields></LookupKeyFields>
+					<LookupResultField></LookupResultField>
+					<LookupSource Type="TDataSource" IsObject="true" IsNull="true">
+					</LookupSource>
+					<Name>AddTime</Name>
+					<ReadOnly>False</ReadOnly>
+					<RegExpression></RegExpression>
+					<Required>True</Required>
+					<ServerAutoRefresh>False</ServerAutoRefresh>
+					<ServerCalculated>False</ServerCalculated>
+					<Size>0</Size>
+					<Visible>True</Visible>
+				</Item0>
+				<Item1>
+					<Alignment>taLeftJustify</Alignment>
+					<BlobType>dabtUnknown</BlobType>
+					<BusinessClassID></BusinessClassID>
+					<Calculated>False</Calculated>
+					<CustomAttributes Type="TStrings" IsObject="true"></CustomAttributes>
+					<DataType>datInteger</DataType>
+					<DefaultValue></DefaultValue>
+					<Description></Description>
+					<DictionaryEntry></DictionaryEntry>
+					<DisplayFormat></DisplayFormat>
+					<DisplayWidth>0</DisplayWidth>
+					<EditFormat></EditFormat>
+					<EditMask></EditMask>
+					<Expression></Expression>
+					<GeneratorName></GeneratorName>
+					<InPrimaryKey>True</InPrimaryKey>
+					<KeyFields></KeyFields>
+					<LogChanges>True</LogChanges>
+					<Lookup>False</Lookup>
+					<LookupCache>False</LookupCache>
+					<LookupKeyFields></LookupKeyFields>
+					<LookupResultField></LookupResultField>
+					<LookupSource Type="TDataSource" IsObject="true" IsNull="true">
+					</LookupSource>
+					<Name>Id</Name>
+					<ReadOnly>False</ReadOnly>
+					<RegExpression></RegExpression>
+					<Required>True</Required>
+					<ServerAutoRefresh>False</ServerAutoRefresh>
+					<ServerCalculated>False</ServerCalculated>
+					<Size>0</Size>
+					<Visible>True</Visible>
+				</Item1>
+				<Item2>
+					<Alignment>taLeftJustify</Alignment>
+					<BlobType>dabtUnknown</BlobType>
+					<BusinessClassID></BusinessClassID>
+					<Calculated>False</Calculated>
+					<CustomAttributes Type="TStrings" IsObject="true"></CustomAttributes>
+					<DataType>datString</DataType>
+					<DefaultValue></DefaultValue>
+					<Description></Description>
+					<DictionaryEntry></DictionaryEntry>
+					<DisplayFormat></DisplayFormat>
+					<DisplayLabel>姓名</DisplayLabel>
+					<DisplayWidth>0</DisplayWidth>
+					<EditFormat></EditFormat>
+					<EditMask></EditMask>
+					<Expression></Expression>
+					<GeneratorName></GeneratorName>
+					<InPrimaryKey>False</InPrimaryKey>
+					<KeyFields></KeyFields>
+					<LogChanges>True</LogChanges>
+					<Lookup>False</Lookup>
+					<LookupCache>False</LookupCache>
+					<LookupKeyFields></LookupKeyFields>
+					<LookupResultField></LookupResultField>
+					<LookupSource Type="TDataSource" IsObject="true" IsNull="true">
+					</LookupSource>
+					<Name>Name</Name>
+					<ReadOnly>False</ReadOnly>
+					<RegExpression></RegExpression>
+					<Required>False</Required>
+					<ServerAutoRefresh>False</ServerAutoRefresh>
+					<ServerCalculated>False</ServerCalculated>
+					<Size>50</Size>
+					<Visible>True</Visible>
+				</Item2>
+				<Item3>
+					<Alignment>taLeftJustify</Alignment>
+					<BlobType>dabtUnknown</BlobType>
+					<BusinessClassID></BusinessClassID>
+					<Calculated>False</Calculated>
+					<CustomAttributes Type="TStrings" IsObject="true"></CustomAttributes>
+					<DataType>datString</DataType>
+					<DefaultValue></DefaultValue>
+					<Description></Description>
+					<DictionaryEntry></DictionaryEntry>
+					<DisplayFormat></DisplayFormat>
+					<DisplayLabel>电话</DisplayLabel>
+					<DisplayWidth>0</DisplayWidth>
+					<EditFormat></EditFormat>
+					<EditMask></EditMask>
+					<Expression></Expression>
+					<GeneratorName></GeneratorName>
+					<InPrimaryKey>False</InPrimaryKey>
+					<KeyFields></KeyFields>
+					<LogChanges>True</LogChanges>
+					<Lookup>False</Lookup>
+					<LookupCache>False</LookupCache>
+					<LookupKeyFields></LookupKeyFields>
+					<LookupResultField></LookupResultField>
+					<LookupSource Type="TDataSource" IsObject="true" IsNull="true">
+					</LookupSource>
+					<Name>Tel</Name>
+					<ReadOnly>False</ReadOnly>
+					<RegExpression></RegExpression>
+					<Required>False</Required>
+					<ServerAutoRefresh>False</ServerAutoRefresh>
+					<ServerCalculated>False</ServerCalculated>
+					<Size>50</Size>
+					<Visible>True</Visible>
+				</Item3>
+				<Item4>
+					<Alignment>taLeftJustify</Alignment>
+					<BlobType>dabtUnknown</BlobType>
+					<BusinessClassID></BusinessClassID>
+					<Calculated>False</Calculated>
+					<CustomAttributes Type="TStrings" IsObject="true"></CustomAttributes>
+					<DataType>datString</DataType>
+					<DefaultValue></DefaultValue>
+					<Description></Description>
+					<DictionaryEntry></DictionaryEntry>
+					<DisplayFormat></DisplayFormat>
+					<DisplayLabel>留言</DisplayLabel>
+					<DisplayWidth>0</DisplayWidth>
+					<EditFormat></EditFormat>
+					<EditMask></EditMask>
+					<Expression></Expression>
+					<GeneratorName></GeneratorName>
+					<InPrimaryKey>False</InPrimaryKey>
+					<KeyFields></KeyFields>
+					<LogChanges>True</LogChanges>
+					<Lookup>False</Lookup>
+					<LookupCache>False</LookupCache>
+					<LookupKeyFields></LookupKeyFields>
+					<LookupResultField></LookupResultField>
+					<LookupSource Type="TDataSource" IsObject="true" IsNull="true">
+					</LookupSource>
+					<Name>Content</Name>
+					<ReadOnly>False</ReadOnly>
+					<RegExpression></RegExpression>
+					<Required>False</Required>
+					<ServerAutoRefresh>False</ServerAutoRefresh>
+					<ServerCalculated>False</ServerCalculated>
+					<Size>1000</Size>
+					<Visible>True</Visible>
+				</Item4>
+				<Item5>
+					<Alignment>taLeftJustify</Alignment>
+					<BlobType>dabtUnknown</BlobType>
+					<BusinessClassID></BusinessClassID>
+					<Calculated>False</Calculated>
+					<CustomAttributes Type="TStrings" IsObject="true"></CustomAttributes>
+					<DataType>datString</DataType>
+					<DefaultValue></DefaultValue>
+					<Description></Description>
+					<DictionaryEntry></DictionaryEntry>
+					<DisplayFormat></DisplayFormat>
+					<DisplayLabel>性别</DisplayLabel>
+					<DisplayWidth>0</DisplayWidth>
+					<EditFormat></EditFormat>
+					<EditMask></EditMask>
+					<Expression></Expression>
+					<GeneratorName></GeneratorName>
+					<InPrimaryKey>False</InPrimaryKey>
+					<KeyFields></KeyFields>
+					<LogChanges>True</LogChanges>
+					<Lookup>False</Lookup>
+					<LookupCache>False</LookupCache>
+					<LookupKeyFields></LookupKeyFields>
+					<LookupResultField></LookupResultField>
+					<LookupSource Type="TDataSource" IsObject="true" IsNull="true">
+					</LookupSource>
+					<Name>Sex</Name>
+					<ReadOnly>False</ReadOnly>
+					<RegExpression></RegExpression>
+					<Required>False</Required>
+					<ServerAutoRefresh>False</ServerAutoRefresh>
+					<ServerCalculated>False</ServerCalculated>
+					<Size>50</Size>
+					<Visible>True</Visible>
+				</Item5>
+				<Item6>
+					<Alignment>taLeftJustify</Alignment>
+					<BlobType>dabtUnknown</BlobType>
+					<BusinessClassID></BusinessClassID>
+					<Calculated>False</Calculated>
+					<CustomAttributes Type="TStrings" IsObject="true"></CustomAttributes>
+					<DataType>datString</DataType>
+					<DefaultValue></DefaultValue>
+					<Description></Description>
+					<DictionaryEntry></DictionaryEntry>
+					<DisplayFormat></DisplayFormat>
+					<DisplayLabel>地址</DisplayLabel>
+					<DisplayWidth>0</DisplayWidth>
+					<EditFormat></EditFormat>
+					<EditMask></EditMask>
+					<Expression></Expression>
+					<GeneratorName></GeneratorName>
+					<InPrimaryKey>False</InPrimaryKey>
+					<KeyFields></KeyFields>
+					<LogChanges>True</LogChanges>
+					<Lookup>False</Lookup>
+					<LookupCache>False</LookupCache>
+					<LookupKeyFields></LookupKeyFields>
+					<LookupResultField></LookupResultField>
+					<LookupSource Type="TDataSource" IsObject="true" IsNull="true">
+					</LookupSource>
+					<Name>Address</Name>
+					<ReadOnly>False</ReadOnly>
+					<RegExpression></RegExpression>
+					<Required>False</Required>
+					<ServerAutoRefresh>False</ServerAutoRefresh>
+					<ServerCalculated>False</ServerCalculated>
+					<Size>100</Size>
+					<Visible>True</Visible>
+				</Item6>
+				<Item7>
+					<Alignment>taLeftJustify</Alignment>
+					<BlobType>dabtUnknown</BlobType>
+					<BusinessClassID></BusinessClassID>
+					<Calculated>False</Calculated>
+					<CustomAttributes Type="TStrings" IsObject="true"></CustomAttributes>
+					<DataType>datString</DataType>
+					<DefaultValue></DefaultValue>
+					<Description></Description>
+					<DictionaryEntry></DictionaryEntry>
+					<DisplayFormat></DisplayFormat>
+					<DisplayLabel>年龄</DisplayLabel>
+					<DisplayWidth>0</DisplayWidth>
+					<EditFormat></EditFormat>
+					<EditMask></EditMask>
+					<Expression></Expression>
+					<GeneratorName></GeneratorName>
+					<InPrimaryKey>False</InPrimaryKey>
+					<KeyFields></KeyFields>
+					<LogChanges>True</LogChanges>
+					<Lookup>False</Lookup>
+					<LookupCache>False</LookupCache>
+					<LookupKeyFields></LookupKeyFields>
+					<LookupResultField></LookupResultField>
+					<LookupSource Type="TDataSource" IsObject="true" IsNull="true">
+					</LookupSource>
+					<Name>Age</Name>
+					<ReadOnly>False</ReadOnly>
+					<RegExpression></RegExpression>
+					<Required>False</Required>
+					<ServerAutoRefresh>False</ServerAutoRefresh>
+					<ServerCalculated>False</ServerCalculated>
+					<Size>8</Size>
+					<Visible>True</Visible>
+				</Item7>
+				<Item8>
+					<Alignment>taLeftJustify</Alignment>
+					<BlobType>dabtUnknown</BlobType>
+					<BusinessClassID></BusinessClassID>
+					<Calculated>False</Calculated>
+					<CustomAttributes Type="TStrings" IsObject="true"></CustomAttributes>
+					<DataType>datString</DataType>
+					<DefaultValue></DefaultValue>
+					<Description></Description>
+					<DictionaryEntry></DictionaryEntry>
+					<DisplayFormat></DisplayFormat>
+					<DisplayLabel>城市</DisplayLabel>
+					<DisplayWidth>0</DisplayWidth>
+					<EditFormat></EditFormat>
+					<EditMask></EditMask>
+					<Expression></Expression>
+					<GeneratorName></GeneratorName>
+					<InPrimaryKey>False</InPrimaryKey>
+					<KeyFields></KeyFields>
+					<LogChanges>True</LogChanges>
+					<Lookup>False</Lookup>
+					<LookupCache>False</LookupCache>
+					<LookupKeyFields></LookupKeyFields>
+					<LookupResultField></LookupResultField>
+					<LookupSource Type="TDataSource" IsObject="true" IsNull="true">
+					</LookupSource>
+					<Name>City</Name>
+					<ReadOnly>False</ReadOnly>
+					<RegExpression></RegExpression>
+					<Required>False</Required>
+					<ServerAutoRefresh>False</ServerAutoRefresh>
+					<ServerCalculated>False</ServerCalculated>
+					<Size>64</Size>
+					<Visible>True</Visible>
+				</Item8>
+				<Item9>
+					<Alignment>taLeftJustify</Alignment>
+					<BlobType>dabtUnknown</BlobType>
+					<BusinessClassID></BusinessClassID>
+					<Calculated>False</Calculated>
+					<CustomAttributes Type="TStrings" IsObject="true"></CustomAttributes>
+					<DataType>datString</DataType>
+					<DefaultValue></DefaultValue>
+					<Description></Description>
+					<DictionaryEntry></DictionaryEntry>
+					<DisplayFormat></DisplayFormat>
+					<DisplayLabel>预约时间</DisplayLabel>
+					<DisplayWidth>0</DisplayWidth>
+					<EditFormat></EditFormat>
+					<EditMask></EditMask>
+					<Expression></Expression>
+					<GeneratorName></GeneratorName>
+					<InPrimaryKey>False</InPrimaryKey>
+					<KeyFields></KeyFields>
+					<LogChanges>True</LogChanges>
+					<Lookup>False</Lookup>
+					<LookupCache>False</LookupCache>
+					<LookupKeyFields></LookupKeyFields>
+					<LookupResultField></LookupResultField>
+					<LookupSource Type="TDataSource" IsObject="true" IsNull="true">
+					</LookupSource>
+					<Name>AdvanceTime</Name>
+					<ReadOnly>False</ReadOnly>
+					<RegExpression></RegExpression>
+					<Required>False</Required>
+					<ServerAutoRefresh>False</ServerAutoRefresh>
+					<ServerCalculated>False</ServerCalculated>
+					<Size>64</Size>
+					<Visible>True</Visible>
+				</Item9>
+				<Item10>
+					<Alignment>taLeftJustify</Alignment>
+					<BlobType>dabtUnknown</BlobType>
+					<BusinessClassID></BusinessClassID>
+					<Calculated>False</Calculated>
+					<CustomAttributes Type="TStrings" IsObject="true"></CustomAttributes>
+					<DataType>datString</DataType>
+					<DefaultValue></DefaultValue>
+					<Description></Description>
+					<DictionaryEntry></DictionaryEntry>
+					<DisplayFormat></DisplayFormat>
+					<DisplayLabel>答复类别</DisplayLabel>
+					<DisplayWidth>0</DisplayWidth>
+					<EditFormat></EditFormat>
+					<EditMask></EditMask>
+					<Expression></Expression>
+					<GeneratorName></GeneratorName>
+					<InPrimaryKey>False</InPrimaryKey>
+					<KeyFields></KeyFields>
+					<LogChanges>True</LogChanges>
+					<Lookup>False</Lookup>
+					<LookupCache>False</LookupCache>
+					<LookupKeyFields></LookupKeyFields>
+					<LookupResultField></LookupResultField>
+					<LookupSource Type="TDataSource" IsObject="true" IsNull="true">
+					</LookupSource>
+					<Name>psName</Name>
+					<ReadOnly>False</ReadOnly>
+					<RegExpression></RegExpression>
+					<Required>False</Required>
+					<ServerAutoRefresh>False</ServerAutoRefresh>
+					<ServerCalculated>False</ServerCalculated>
+					<Size>8000</Size>
+					<Visible>True</Visible>
+				</Item10>
+				<Item11>
+					<Alignment>taLeftJustify</Alignment>
+					<BlobType>dabtUnknown</BlobType>
+					<BusinessClassID></BusinessClassID>
+					<Calculated>False</Calculated>
+					<CustomAttributes Type="TStrings" IsObject="true">Properties=ComboBox
+Properties.Items=已处理;垃圾信息
+</CustomAttributes>
+					<DataType>datString</DataType>
+					<DefaultValue></DefaultValue>
+					<Description></Description>
+					<DictionaryEntry></DictionaryEntry>
+					<DisplayFormat></DisplayFormat>
+					<DisplayLabel>处理结果</DisplayLabel>
+					<DisplayWidth>0</DisplayWidth>
+					<EditFormat></EditFormat>
+					<EditMask></EditMask>
+					<Expression></Expression>
+					<GeneratorName></GeneratorName>
+					<InPrimaryKey>False</InPrimaryKey>
+					<KeyFields></KeyFields>
+					<LogChanges>True</LogChanges>
+					<Lookup>False</Lookup>
+					<LookupCache>False</LookupCache>
+					<LookupKeyFields></LookupKeyFields>
+					<LookupResultField></LookupResultField>
+					<LookupSource Type="TDataSource" IsObject="true" IsNull="true">
+					</LookupSource>
+					<Name>ProcessResult</Name>
+					<ReadOnly>False</ReadOnly>
+					<RegExpression></RegExpression>
+					<Required>False</Required>
+					<ServerAutoRefresh>False</ServerAutoRefresh>
+					<ServerCalculated>False</ServerCalculated>
+					<Size>100</Size>
+					<Visible>True</Visible>
+				</Item11>
+				<Item12>
+					<Alignment>taLeftJustify</Alignment>
+					<BlobType>dabtUnknown</BlobType>
+					<BusinessClassID></BusinessClassID>
+					<Calculated>False</Calculated>
+					<CustomAttributes Type="TStrings" IsObject="true"></CustomAttributes>
+					<DataType>datString</DataType>
+					<DefaultValue></DefaultValue>
+					<Description></Description>
+					<DictionaryEntry></DictionaryEntry>
+					<DisplayFormat></DisplayFormat>
+					<DisplayLabel>操作员</DisplayLabel>
+					<DisplayWidth>0</DisplayWidth>
+					<EditFormat></EditFormat>
+					<EditMask></EditMask>
+					<Expression></Expression>
+					<GeneratorName></GeneratorName>
+					<InPrimaryKey>False</InPrimaryKey>
+					<KeyFields></KeyFields>
+					<LogChanges>True</LogChanges>
+					<Lookup>False</Lookup>
+					<LookupCache>False</LookupCache>
+					<LookupKeyFields></LookupKeyFields>
+					<LookupResultField></LookupResultField>
+					<LookupSource Type="TDataSource" IsObject="true" IsNull="true">
+					</LookupSource>
+					<Name>ProcessUserID</Name>
+					<ReadOnly>False</ReadOnly>
+					<RegExpression></RegExpression>
+					<Required>False</Required>
+					<ServerAutoRefresh>False</ServerAutoRefresh>
+					<ServerCalculated>False</ServerCalculated>
+					<Size>32</Size>
+					<Visible>True</Visible>
+				</Item12>
+				<Item13>
+					<Alignment>taLeftJustify</Alignment>
+					<BlobType>dabtUnknown</BlobType>
+					<BusinessClassID></BusinessClassID>
+					<Calculated>False</Calculated>
+					<CustomAttributes Type="TStrings" IsObject="true"></CustomAttributes>
+					<DataType>datDateTime</DataType>
+					<DefaultValue></DefaultValue>
+					<Description></Description>
+					<DictionaryEntry></DictionaryEntry>
+					<DisplayFormat></DisplayFormat>
+					<DisplayLabel>处理时间</DisplayLabel>
+					<DisplayWidth>0</DisplayWidth>
+					<EditFormat></EditFormat>
+					<EditMask></EditMask>
+					<Expression></Expression>
+					<GeneratorName></GeneratorName>
+					<InPrimaryKey>False</InPrimaryKey>
+					<KeyFields></KeyFields>
+					<LogChanges>True</LogChanges>
+					<Lookup>False</Lookup>
+					<LookupCache>False</LookupCache>
+					<LookupKeyFields></LookupKeyFields>
+					<LookupResultField></LookupResultField>
+					<LookupSource Type="TDataSource" IsObject="true" IsNull="true">
+					</LookupSource>
+					<Name>ProcessTime</Name>
+					<ReadOnly>False</ReadOnly>
+					<RegExpression></RegExpression>
+					<Required>False</Required>
+					<ServerAutoRefresh>False</ServerAutoRefresh>
+					<ServerCalculated>False</ServerCalculated>
+					<Size>0</Size>
+					<Visible>True</Visible>
+				</Item13>
+			</Fields>
+			<InsertCommandName></InsertCommandName>
+			<IsPublic>True</IsPublic>
+			<Name>OutSite_Feedback</Name>
+			<Params Type="TDAParamCollection" IsObject="true" IsCollection="true" Count="0" ItemClass="TDAParam">
+			</Params>
+			<ReadOnly>False</ReadOnly>
+			<Statements Type="TDAStatementCollection" IsObject="true" IsCollection="true" Count="1" ItemClass="TDAStatement">
+				<Item0>
+					<ColumnMappings Type="TDAColumnMappingCollection" IsObject="true" IsCollection="true" Count="14" ItemClass="TDAColumnMapping">
+						<Item0>
+							<DatasetField>AddTime</DatasetField>
+							<TableField>AddTime</TableField>
+						</Item0>
+						<Item1>
+							<DatasetField>Id</DatasetField>
+							<TableField>Id</TableField>
+						</Item1>
+						<Item2>
+							<DatasetField>Name</DatasetField>
+							<TableField>Name</TableField>
+						</Item2>
+						<Item3>
+							<DatasetField>Tel</DatasetField>
+							<TableField>Tel</TableField>
+						</Item3>
+						<Item4>
+							<DatasetField>Content</DatasetField>
+							<TableField>Content</TableField>
+						</Item4>
+						<Item5>
+							<DatasetField>Sex</DatasetField>
+							<TableField>Sex</TableField>
+						</Item5>
+						<Item6>
+							<DatasetField>Address</DatasetField>
+							<TableField>Address</TableField>
+						</Item6>
+						<Item7>
+							<DatasetField>Age</DatasetField>
+							<TableField>Age</TableField>
+						</Item7>
+						<Item8>
+							<DatasetField>City</DatasetField>
+							<TableField>City</TableField>
+						</Item8>
+						<Item9>
+							<DatasetField>AdvanceTime</DatasetField>
+							<TableField>AdvanceTime</TableField>
+						</Item9>
+						<Item10>
+							<DatasetField>psName</DatasetField>
+							<TableField>psName</TableField>
+						</Item10>
+						<Item11>
+							<DatasetField>ProcessResult</DatasetField>
+							<TableField>ProcessResult</TableField>
+						</Item11>
+						<Item12>
+							<DatasetField>ProcessUserID</DatasetField>
+							<TableField>ProcessUserID</TableField>
+						</Item12>
+						<Item13>
+							<DatasetField>ProcessTime</DatasetField>
+							<TableField>ProcessTime</TableField>
+						</Item13>
+					</ColumnMappings>
+					<Connection></Connection>
+					<ConnectionType>MSSQL</ConnectionType>
+					<Default>True</Default>
+					<GeneratorName></GeneratorName>
+					<Name></Name>
+					<SQL>SELECT
+	[AddTime], [Id], [Name],
+	[Tel], [Content], [Sex],
+	[Address], [Age], [City],
+	[AdvanceTime],
+	replace([psName], '预约挂号', '') as psname,
+	[ProcessResult], [ProcessUserID], [ProcessTime]
+FROM
+	[OutSite_Feedback]
+WHERE
+	{WHERE}
+</SQL>
+					<StatementType>stSQL</StatementType>
+					<TargetTable>OutSite_Feedback</TargetTable>
+				</Item0>
+			</Statements>
+			<UpdateCommandName></UpdateCommandName>
+		</Item1>
+		<Item2>
+			<BusinessClassID></BusinessClassID>
+			<BusinessRulesClient Type="TDAClientBusinessRuleScript" IsObject="true">
+				<CompileOnServer>True</CompileOnServer>
+				<Description></Description>
+				<RunOnClientAndServer>True</RunOnClientAndServer>
+				<Script><![CDATA[]]></Script>
+				<ScriptLanguage>rslPascalScript</ScriptLanguage>
+				<ScriptLanguageStr></ScriptLanguageStr>
+			</BusinessRulesClient>
+			<BusinessRulesServer Type="TDABusinessRuleScript" IsObject="true">
+				<Description></Description>
+				<Script><![CDATA[]]></Script>
+				<ScriptLanguage>rslPascalScript</ScriptLanguage>
+				<ScriptLanguageStr></ScriptLanguageStr>
+			</BusinessRulesServer>
+			<CustomAttributes Type="TStrings" IsObject="true">Description=住院患者是否显示
+Category=住院
+ChineseField=Nation
+OptionsView.GroupByBox=False
+</CustomAttributes>
+			<DeleteCommandName></DeleteCommandName>
+			<Description></Description>
+			<DynamicWhereXML><![CDATA[]]></DynamicWhereXML>
+			<Fields Type="TDAFieldCollection" IsObject="true" IsCollection="true" Count="2" ItemClass="TDAField">
+				<Item0>
+					<Alignment>taLeftJustify</Alignment>
+					<BlobType>dabtUnknown</BlobType>
+					<BusinessClassID></BusinessClassID>
+					<Calculated>False</Calculated>
+					<CustomAttributes Type="TStrings" IsObject="true"></CustomAttributes>
+					<DataType>datString</DataType>
+					<DefaultValue></DefaultValue>
+					<Description></Description>
+					<DictionaryEntry></DictionaryEntry>
+					<DisplayFormat></DisplayFormat>
+					<DisplayLabel>住院号</DisplayLabel>
+					<DisplayWidth>0</DisplayWidth>
+					<EditFormat></EditFormat>
+					<EditMask></EditMask>
+					<Expression></Expression>
+					<GeneratorName></GeneratorName>
+					<InPrimaryKey>False</InPrimaryKey>
+					<KeyFields></KeyFields>
+					<LogChanges>True</LogChanges>
+					<Lookup>False</Lookup>
+					<LookupCache>False</LookupCache>
+					<LookupKeyFields></LookupKeyFields>
+					<LookupResultField></LookupResultField>
+					<LookupSource Type="TDataSource" IsObject="true" IsNull="true">
+					</LookupSource>
+					<Name>HospID</Name>
+					<ReadOnly>False</ReadOnly>
+					<RegExpression></RegExpression>
+					<Required>False</Required>
+					<ServerAutoRefresh>False</ServerAutoRefresh>
+					<ServerCalculated>False</ServerCalculated>
+					<Size>10</Size>
+					<Visible>True</Visible>
+				</Item0>
+				<Item1>
+					<Alignment>taLeftJustify</Alignment>
+					<BlobType>dabtUnknown</BlobType>
+					<BusinessClassID></BusinessClassID>
+					<Calculated>False</Calculated>
+					<CustomAttributes Type="TStrings" IsObject="true">Properties=CheckBox
+</CustomAttributes>
+					<DataType>datInteger</DataType>
+					<DefaultValue></DefaultValue>
+					<Description></Description>
+					<DictionaryEntry></DictionaryEntry>
+					<DisplayFormat></DisplayFormat>
+					<DisplayLabel>是否显示</DisplayLabel>
+					<DisplayWidth>0</DisplayWidth>
+					<EditFormat></EditFormat>
+					<EditMask></EditMask>
+					<Expression></Expression>
+					<GeneratorName></GeneratorName>
+					<InPrimaryKey>False</InPrimaryKey>
+					<KeyFields></KeyFields>
+					<LogChanges>True</LogChanges>
+					<Lookup>False</Lookup>
+					<LookupCache>False</LookupCache>
+					<LookupKeyFields></LookupKeyFields>
+					<LookupResultField></LookupResultField>
+					<LookupSource Type="TDataSource" IsObject="true" IsNull="true">
+					</LookupSource>
+					<Name>isavailable</Name>
+					<ReadOnly>False</ReadOnly>
+					<RegExpression></RegExpression>
+					<Required>False</Required>
+					<ServerAutoRefresh>False</ServerAutoRefresh>
+					<ServerCalculated>False</ServerCalculated>
+					<Size>0</Size>
+					<Visible>True</Visible>
+				</Item1>
+			</Fields>
+			<InsertCommandName></InsertCommandName>
+			<IsPublic>True</IsPublic>
+			<Name>Hosp_PatientAvailable</Name>
+			<Params Type="TDAParamCollection" IsObject="true" IsCollection="true" Count="0" ItemClass="TDAParam">
+			</Params>
+			<ReadOnly>False</ReadOnly>
+			<Statements Type="TDAStatementCollection" IsObject="true" IsCollection="true" Count="1" ItemClass="TDAStatement">
+				<Item0>
+					<ColumnMappings Type="TDAColumnMappingCollection" IsObject="true" IsCollection="true" Count="2" ItemClass="TDAColumnMapping">
+						<Item0>
+							<DatasetField>HospID</DatasetField>
+							<TableField>HospID</TableField>
+						</Item0>
+						<Item1>
+							<DatasetField>isavailable</DatasetField>
+							<TableField>isavailable</TableField>
+						</Item1>
+					</ColumnMappings>
+					<Connection></Connection>
+					<ConnectionType>MSSQL</ConnectionType>
+					<Default>True</Default>
+					<GeneratorName></GeneratorName>
+					<Name></Name>
+					<StatementType>stAutoSQL</StatementType>
+					<TargetTable>Hosp_PatientAvailable</TargetTable>
+				</Item0>
+			</Statements>
+			<UpdateCommandName></UpdateCommandName>
+		</Item2>
+	</Datasets>
+	<Diagrams Type="TDADiagrams" IsObject="true" IsNull="true">
+	</Diagrams>
+	<JoinDataTables Type="TDAJoinDataTableCollection" IsObject="true" IsCollection="true" Count="0" ItemClass="TDAJoinDataTable">
+	</JoinDataTables>
+	<RelationShips Type="TDADatasetRelationshipCollection" IsObject="true" IsCollection="true" Count="1" ItemClass="TDADatasetRelationship">
+		<Item0>
+			<Description></Description>
+			<DetailDatasetName></DetailDatasetName>
+			<DetailFields>FRecordID</DetailFields>
+			<MasterDatasetName></MasterDatasetName>
+			<MasterFields>FRecordID</MasterFields>
+			<Name>Case_ScanRecord_ScanImage</Name>
+			<RelationshipType>rtForeignKey</RelationshipType>
+		</Item0>
+	</RelationShips>
+	<Tag>0</Tag>
+	<UnionDataTables Type="TDAUnionDataTableCollection" IsObject="true" IsCollection="true" Count="0" ItemClass="TDAUnionDataTable">
+	</UnionDataTables>
+	<UpdateRules Type="TDAUpdateRuleCollection" IsObject="true" IsCollection="true" Count="0" ItemClass="TDAUpdateRule">
+	</UpdateRules>
+	<Version>0</Version>
+</TDASchema>

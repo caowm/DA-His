@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<TfrxReport Version="6.2.11" DotMatrixReport="False" EngineOptions.DoublePass="True" IniFile="\Software\Fast Reports" PreviewOptions.AllowEdit="False" PreviewOptions.Buttons="18431" PreviewOptions.OutlineVisible="True" PreviewOptions.Zoom="1" PrintOptions.Printer="Default" PrintOptions.PrintOnSheet="0" ReportOptions.CreateDate="39265.4633548727" ReportOptions.Description.Text="" ReportOptions.LastChange="44092.9740918519" ScriptLanguage="PascalScript" ScriptText.Text="&#13;&#10;begin&#13;&#10;  ReportDB.DatabaseName := DB_His_Data;&#13;&#10;end." StoreInDFM="False">
+  <Datasets>
+    <item DataSet="PayQuery" DataSetName="PayQuery"/>
+  </Datasets>
+  <Variables>
+    <item Name=" New Category1"/>
+    <item Name="UnitName" Value="'长江航运总医院'"/>
+    <item Name="PayID" Value="'20140506'"/>
+  </Variables>
+  <TfrxDataPage Name="Data" Height="1000" Left="0" Top="0" Width="1000">
+    <TfrxADODatabase Name="ReportDB" DatabaseName="Provider=SQLOLEDB.1;Persist Security Info=False" PropData="05704C65667403A4000470546F70024C"/>
+    <TfrxADOQuery Name="PayQuery" UserName="PayQuery" CloseDataSource="True" FieldAliases.Text="" BCDToCurrency="False" IgnoreDupParams="False" SQL.Text="SELECT [PayID], a.[HospID], [PayTime], [PayMoney], [PayTypeID], PayType, InOutSign,&#13;&#10;   BillNum, [HospFeeID], [OpID], a.[Memo], b.PatientName                                      &#13;&#10;FROM Hosp_Payment a left join Hosp_Patient b on a.HospID = b.HospID                                                                                                     &#13;&#10;where PayID = :PayID                                  " CommandTimeout="30" Database="ReportDB" LockType="ltReadOnly" PropData="05704C656674030C010470546F70024C0A506172616D65746572730101063E204E616D653D225061794944222044617461547970653D226674537472696E67222045787072657373696F6E3D22262336303B5061794944262336323B220000"/>
+  </TfrxDataPage>
+  <TfrxReportPage Name="Page1" PaperWidth="120" PaperHeight="100" PaperSize="256" LeftMargin="12" RightMargin="12" TopMargin="10" BottomMargin="10" ColumnWidth="0" ColumnPositions.Text="" Frame.Typ="0" PrintIfEmpty="False" HGuides.Text="" VGuides.Text="">
+    <TfrxReportTitle Name="ReportTitle1" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Frame.Typ="0" Height="275.90564606" Left="0" Top="16" Width="362.83488" OnBeforePrint="ReportTitle1OnBeforePrint" StartNewPage="True">
+      <TfrxMemoView Name="Memo1" AllowVectorExport="True" Left="64.84877789" Top="45.35435268" Width="213.04613842" Height="19.69334053" Font.Charset="134" Font.Color="-16777208" Font.Height="-21" Font.Name="宋体" Font.Style="1" Frame.Typ="0" Frame.Width="0.5" HAlign="haCenter" ParentFont="False" Text="缴款�"/>
+      <TfrxMemoView Name="Memo19" AllowVectorExport="True" Left="45.01076636" Top="82.37011047" Width="299.61365091" Height="183.82259545" Font.Charset="134" Font.Color="-16777208" Font.Height="-13" Font.Name="宋体" Font.Style="0" Frame.Typ="0" LineSpacing="7" ParentFont="False" Text="缴款时间: [PayQuery.&#34;PayTime&#34;]&#13;&#10;住院号：[PayQuery.&#34;HospID&#34;] &#13;&#10;姓名: [PayQuery.&#34;PatientName&#34;] &#13;&#10;缴款金额：[RMB(&#60;PayQuery.&#34;PayMoney&#34;&#62;)]  [PayQuery.&#34;PayMoney&#34;]&#13;&#10;缴款类型: [PayQuery.&#34;PayType&#34;]  &#13;&#10;&#13;&#10;收费人：[PayQuery.&#34;OpID&#34;] ">
+        <Formats>
+          <item/>
+          <item/>
+          <item/>
+          <item/>
+          <item/>
+          <item/>
+          <item/>
+        </Formats>
+      </TfrxMemoView>
+      <TfrxMemoView Name="Memo2" AllowVectorExport="True" Left="3.77953" Top="14.23624" Width="137.45553842" Height="19.69334053" Font.Charset="134" Font.Color="-16777208" Font.Height="-16" Font.Name="宋体" Font.Style="1" Frame.Typ="0" Frame.Width="0.5" HAlign="haCenter" ParentFont="False" Text="XXXX医院"/>
+    </TfrxReportTitle>
+  </TfrxReportPage>
+</TfrxReport>

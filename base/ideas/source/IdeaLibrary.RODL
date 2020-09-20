@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Library Name="IdeaLibrary" UID="{8B809773-C57D-4F7F-AF9A-423284ABB852}" Version="3.0">
+<Services>
+<Service Name="IdeaService" UID="{AF01F3A1-28F5-4829-9C89-CE22D0DA7C3D}" Ancestor="DataAbstractService">
+<Documentation><![CDATA[数据集成服务]]></Documentation>
+<Interfaces>
+<Interface Name="Default" UID="{460520E1-1C6B-436C-BC39-B5F857C60E96}">
+<Operations>
+</Operations>
+</Interface>
+</Interfaces>
+</Service>
+</Services>
+<EventSinks>
+</EventSinks>
+<Structs>
+</Structs>
+<Enums>
+</Enums>
+<Arrays>
+</Arrays>
+<Uses>
+<Use Name="DataAbstract" UID="{9BF88F60-E1BA-4646-9D4B-E76C0EAFB35C}" Rodl="$(Data Abstract for Delphi)\Source\DataAbstract4.RODL" AbsoluteRodl="C:\Program Files (x86)\RemObjects Software\Data Abstract for Delphi\Source\DataAbstract4.RODL" UsedRodlUID="{DC8B7BE2-14AF-402D-B1F8-E1008B6FA4F6}" DontCodeGen="1">
+<Includes UID="{ECE5910F-040B-4BDF-9502-EDF7F95642CF}" Delphi="DataAbstract4" DotNet="RemObjects.DataAbstract.Server" ObjC="DataAbstract/DataAbstract4_Intf" Java="com.remobjects.dataabstract.intf" Cocoa="DataAbstract"/>
+</Use>
+</Uses>
+<Exceptions>
+</Exceptions>
+</Library>

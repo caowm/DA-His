@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{F8187957-0F09-4E6B-81EA-C576E6F55703}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="his server\DAHisServer.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="his client\DAHisClient.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="DAHisServer">
+        <MSBuild Projects="his server\DAHisServer.dproj"/>
+    </Target>
+    <Target Name="DAHisServer:Clean">
+        <MSBuild Projects="his server\DAHisServer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DAHisServer:Make">
+        <MSBuild Projects="his server\DAHisServer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DAHisClient">
+        <MSBuild Projects="his client\DAHisClient.dproj"/>
+    </Target>
+    <Target Name="DAHisClient:Clean">
+        <MSBuild Projects="his client\DAHisClient.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DAHisClient:Make">
+        <MSBuild Projects="his client\DAHisClient.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="DAHisServer;DAHisClient"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="DAHisServer:Clean;DAHisClient:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="DAHisServer:Make;DAHisClient:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
