@@ -1,5 +1,5 @@
 # DA-His
-使用Delphi 10开发的Hopspital information management，基于RemObjects DataAbstract，以Schema为中心，支持Internet标准。
+使用Delphi 10开发的Hospital information management，基于RemObjects DataAbstract，以Schema为中心，支持Internet标准。
 
 ## 技术选型
 1. Delphi 10
